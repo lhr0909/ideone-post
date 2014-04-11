@@ -19,18 +19,6 @@ var app = express();
 app.use(cors());
 app.use(bodyParser());
 
-app.get('/ideone-post/proxy', function(req, res) {
-  request({
-    uri: 'http://ideone.com',
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:15.0) Gecko/20120427 Firefox/15.0a1'
-    },
-    method: 'GET'
-  }, function(error, response, body) {
-      res.send(body);
-  });
-});
-
 app.post('/ideone-post/submit', function(req, res) {
   request({
     uri: 'http://ideone.com',
